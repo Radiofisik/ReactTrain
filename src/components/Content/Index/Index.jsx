@@ -1,8 +1,27 @@
 import React from "react";
 
-const Index = () => {
+const Item = (props) => {
     return (
-        <div>Index</div>
+        <div>{props.value}</div>
+    )
+};
+
+const Index = () => {
+    let arr = [
+        {
+            name: "test",
+            value: "testValue"
+        },
+        {
+            name: "test2",
+            value: "testValue2"
+        }];
+    let elements = arr.map(x => <Item value={x.name}/>);
+
+    return (
+        <div>
+            {elements}
+        </div>
     )
 };
 
