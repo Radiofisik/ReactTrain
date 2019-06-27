@@ -6,17 +6,8 @@ const Item = (props) => {
     )
 };
 
-const Index = () => {
-    let arr = [
-        {
-            name: "test",
-            value: "testValue"
-        },
-        {
-            name: "test2",
-            value: "testValue2"
-        }];
-    let elements = arr.map(x => <Item value={x.name}/>);
+const Index = (props) => {
+    let elements = props.arr.map(x => <Item value={x.name}/>);
 
     return (
         <div>
