@@ -7,14 +7,16 @@ const Item = (props) => {
 };
 
 const Index = (props) => {
-    let elements = props.arr.map(x => <Item value={x.name}/>);
+    let elements = props.store.getArr().map(x => <Item value={x.name}/>);
 
     return (
         <div>
+            <textarea value={props.store.getItem().value} onChange={(event) => {
+                props.store.setItemValue(event.target.value)}}></textarea>
             {elements}
             <button onClick={() => {
-                alert('hi')
-            }}> Hi button
+                props.store.addItem();
+            }}> Add Item button
             </button>
         </div>
     )

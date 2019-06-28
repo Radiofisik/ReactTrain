@@ -5,10 +5,8 @@ import About from "./About/About";
 import {Route} from "react-router-dom";
 
 const Content = (props) => {
-
-
     return <div className={classes.content}>
-        <Route path="/" exact render={()=><Index arr={props.state.arr}/>}/>
+        <Route path="/" exact render={()=><Index store={props.store}/>}/>
         <Route path="/about/" component={About}/>
     </div>
 };
