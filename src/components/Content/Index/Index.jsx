@@ -12,6 +12,10 @@ const Index = (props) => {
     return (
         <div>
             {elements}
+            <button onClick={() => {
+                alert('hi')
+            }}> Hi button
+            </button>
         </div>
     )
 };

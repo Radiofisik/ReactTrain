@@ -4,19 +4,11 @@ import Index from "./Index/Index";
 import About from "./About/About";
 import {Route} from "react-router-dom";
 
-const Content = () => {
-    let arr = [
-        {
-            name: "test",
-            value: "testValue"
-        },
-        {
-            name: "test2",
-            value: "testValue2"
-        }];
+const Content = (props) => {
+
 
     return <div className={classes.content}>
-        <Route path="/" exact render={()=><Index arr={arr}/>}/>
+        <Route path="/" exact render={()=><Index arr={props.state.arr}/>}/>
         <Route path="/about/" component={About}/>
     </div>
 };
