@@ -22,6 +22,7 @@ const postsReducer = (state = initialState, action) => {
             return state;
         case UPDATE_NEW_POST_TEXT:
             state.newMessageText = action.newText;
+            console.log(state.newMessageText);
             return state;
         default:
             return state;

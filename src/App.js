@@ -12,7 +12,7 @@ const App = (props) => {
             <div className='app-wrapper'>
                 <Header/>
                 <Navigation/>
-                <Content store={props.store}/>
+                <Content/>
                 <Footer/>
             </div>
         </Router>
