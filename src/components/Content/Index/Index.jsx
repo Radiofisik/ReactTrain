@@ -1,4 +1,5 @@
 import React from "react";
+import {AddPostCommandCreator, UpdateTextCreator} from "../../../redux/post-reducer";
 
 const Item = (props) => {
     return (
@@ -7,17 +8,21 @@ const Item = (props) => {
 };
 
 const Index = (props) => {
-    let elements = props.store.getArr().map(x => <Item value={x.name}/>);
+    // debugger;
 
+    let state = props.store.getState().postsPage;
+    let elements = state.posts.map(x => <Item value={x.value}/>);
     return (
         <div>
-            <textarea value={props.store.getItem().value} onChange={(event) => {
-                props.store.setItemValue(event.target.value)}}></textarea>
+            <textarea value={state.newMessageText} onChange={(event) => {
+                props.store.dispatch(UpdateTextCreator(event.target.value));
+            }}></textarea>
+
             {elements}
+
             <button onClick={() => {
-                props.store.addItem();
-            }}> Add Item button
-            </button>
+                props.store.dispatch(AddPostCommandCreator());
+            }}>Add Item button</button>
         </div>
     )
 };
