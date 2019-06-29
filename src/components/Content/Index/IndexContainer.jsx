@@ -4,8 +4,9 @@ import React from "react";
 import {AddPostCommandCreator, UpdateTextCreator} from "../../../redux/post-reducer";
 
 let mapState = (state) => {
-    let item = state.postsPage;
-    return {item};
+    let item = state.postsPage.newMessageText;
+    let items = state.postsPage.posts;
+    return {item, items};
 };
 
 let mapDispatch = (dispatch) => {

@@ -7,10 +7,10 @@ const Item = (props) => {
 };
 
 const Index = (props) => {
-    let elements = props.item.posts.map(x => <Item value={x.value}/>);
+    let elements = props.items.map(x => <Item value={x.value}/>);
     return (
         <div>
-            <textarea value={props.item.newMessageText} onChange={(event) => {
+            <textarea value={props.item} onChange={(event) => {
                 props.update(event.target.value);
             }}></textarea>
 
